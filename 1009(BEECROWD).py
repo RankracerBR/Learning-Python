@@ -1,0 +1,5 @@
+nome = print(input())
+salario = float(input())
+vendas = float(input())
+bonus = print()
+bonus_2 = print()
