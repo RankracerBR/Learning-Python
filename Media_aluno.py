@@ -1,6 +1,6 @@
 a = float(input())
 b = float(input())
 
-media = (a/10 * 3.5) + (b/10 * 7.5)
+media = (((a * 3.5) + (b * 7.5)) / 11)
 
-print(f'MÉDIA = {media:.5f}')
+print(f'MEDIA = {media:.5f}')
