@@ -13,29 +13,17 @@ class Programadores(Base):
     id = Column(Integer, primary_key=True)
     nome = Column(String(40), index=True)
     idade = Column(Integer)
-    email = Column(String(40))
+    email = Column(String)
     def __repr__(self):
-        return '<Programador {}>'.format(self.nome)
+        return '<Programador(a) {}, Idade {}>'.format(self.nome,self.idade)
     def save(self):
         db_session.add(self)
-        
-    def delete(self):
-        db_session.delete(self)
-        
 class Habilidades(Base):
     __tablename__='habilidades'
     id = Column(Integer, primary_key=True)
-    habilidade = Column(String(80))
+    nome = Column(String(80))
     programador_id = Column(Integer, ForeignKey('programadores.id'))
     programador = relationship("Programadores")
-    def __repr__(self):
-        return '<Habilidades {}>'.format(self.habilidade)
-    def save(self):
-        db_session.add(self)
-        
-    def delete(self):
-        db_session.delete(self)
-        db_session.commit()
 def init_db():
     Base.metadata.create_all(bind=engine)
 
