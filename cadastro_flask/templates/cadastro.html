@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Página de cadastro</title>
+  </head>
+  <body>
+    <a href='/'>HOME</a>
+    <a href='cadastrar.html'>LIMPAR</a>
+    <h1>Cadastro de Fitas</h1>
+    <form action='inserir' method='post'>
+      <label for='id'>Id</label>
+      <input name='id' type='text'/><br>
+      <label for='titulo'>Título</label>
+      <input name='titulo' type='text'/><br>
+      <label for='ano'>Ano</label>
+      <input name='ano' type='text'/><br>
+      <input name='enviar' type='submit' value='Enviar'>
+    </form>
+    {%if mensagem%}
+    <h3 style='color:red;'>{{mensagem}}</h3>
+    {%endif%}
+  </body>
+</html>
